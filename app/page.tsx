@@ -1,113 +1,79 @@
-import Image from "next/image";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { allDocuments } from 'contentlayer/generated';
+import { format } from 'date-fns';
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    const firstPost = allDocuments[0];
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    return (
+        <main className='min-h-[calc(100vh-6rem)]'>
+            <div className='mx-auto max-w-5xl font-mono leading-8 text-zinc-400'>
+                <h1 className='text-4xl text-zinc-200'>DYDM.ME</h1>
+                <br />
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                <p>一个个人博客网站, 记录工作和生活中个人觉得的有趣的事物.</p>
+                <br />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <p>可以是一些技术文章, 一些博客翻译, 一些专业知识文档, 以及一些有趣的东西等.</p>
+                <br />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+                <p>主要是前端技术方面的内容, 偶尔也会涉及到一些数据库和网络方面的知识. 更偏向于 React 和 Next.js 等框架的内容, 其他方面也会进行补充.</p>
+                <br />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+                <p>这个个人博客网站主要使用了下面的技术栈:</p>
+                <ul className='list-inside list-disc text-zinc-200'>
+                    <li>TypeScript</li>
+                    <li>Next.js</li>
+                    <li>Tailwind CSS</li>
+                    <li>shadcn</li>
+                    <li>Contentlayer</li>
+                    <li>...</li>
+                </ul>
+                <br />
+
+                <p> 网站会持续更新, 相信在长期主义的影响下, 会有意想不到的收获.</p>
+                <br />
+
+                <Card className='border-zinc-800 text-zinc-400'>
+                    <CardHeader>
+                        <CardTitle>最新内容</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>{firstPost.title}</p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                    </CardContent>
+                    <CardFooter>
+                        <p>查看更多</p>
+                    </CardFooter>
+                </Card>
+                <br />
+
+                <Card className='border-zinc-800 text-zinc-400'>
+                    <CardHeader>
+                        <CardTitle>随便看看</CardTitle>
+                    </CardHeader>
+                    <CardContent className='divide-y divide-zinc-800'>
+                        <p className='hover:cursor-pointer hover:text-zinc-200'>
+                            {firstPost.title} <span className='float-end'>{format(new Date(firstPost.date), 'yyyy-MM-dd')}</span>
+                        </p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                        <p>Card Content</p>
+                    </CardContent>
+                    <CardFooter>
+                        <div className='bg-yellow- ml-auto'>查看更多</div>
+                    </CardFooter>
+                </Card>
+                <br />
+
+                {/*<p className='text-sm text-zinc-800'>*/}
+                {/*    一个普通的程序员, 会写一些自己感兴趣的内容. 喜欢简洁美观易用的产品, 在这个博客网站中以文字记录的方式沉淀技术 / 生活 / 思考方式,*/}
+                {/*</p>*/}
+            </div>
+        </main>
+    );
 }
