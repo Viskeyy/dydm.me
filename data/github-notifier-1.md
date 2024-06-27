@@ -1,11 +1,11 @@
 ---
 title: '通过 Webhook 创建一个 GitHub 通知 Bot'
 date: 2024-06-26
-tags: ['github', 'webhook']
+tags: ['github-notifier']
 type: 'DefaultDocument'
 ---
 
-# 通过 Webhook 创建一个 GitHub 通知 Bot
+## 通过 Webhook 创建一个 GitHub 通知 Bot
 
 在通过 GitHub 进行团队协作时, 往往会遇到一个严重的问题: 沟通不及时或是错过沟通.
 

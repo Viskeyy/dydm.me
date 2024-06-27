@@ -20,10 +20,6 @@ export const TagsCard = ({ activatedTag }: { activatedTag?: string }) => {
                     </Link>
                 </Button>
             ))}
-
-            <Button variant='outline' className='text-zinc-400 hover:bg-transparent'>
-                View All [99]
-            </Button>
         </div>
     );
 };

@@ -1,10 +1,10 @@
-import { BlogList } from '@/components/BlogList';
 import { PageTitle } from '@/components/PageTitle';
 import { TagsCard } from '@/components/TagsCard';
 import { getBlogsByTag } from '@/helper/blogsOperation';
+import { PostList } from 'components/PostList';
 
 export default function Tag({ params }: { params: { tag: string } }) {
-    const documents = getBlogsByTag(params.tag);
+    const posts = getBlogsByTag(params.tag);
 
     return (
         <main className='min-h-[calc(100vh-6rem)]'>
@@ -15,7 +15,7 @@ export default function Tag({ params }: { params: { tag: string } }) {
                 </div>
 
                 <div className='col-span-2'>
-                    <BlogList documents={documents} />
+                    <PostList posts={posts} />
                 </div>
             </div>
         </main>

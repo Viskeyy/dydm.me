@@ -1,6 +1,6 @@
-import { BlogList } from '@/components/BlogList';
 import { getBlogsByType } from '@/helper/blogsOperation';
 import { PageTitle } from 'components/PageTitle';
+import { PostList } from 'components/PostList';
 
 export default function Disarray() {
     const disarray = getBlogsByType('DisarrayDocument');
@@ -9,7 +9,7 @@ export default function Disarray() {
         <main className='min-h-[calc(100vh-6rem)]'>
             <PageTitle title={'Disarray'} />
 
-            <BlogList documents={disarray} />
+            <PostList posts={disarray} />
         </main>
     );
 }
