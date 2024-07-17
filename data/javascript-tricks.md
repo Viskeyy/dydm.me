@@ -84,7 +84,7 @@ console.log("%cHello World!", "color: red; font-size: 20px;");
 
 ### 捕获浏览器后退事件
 
-通过 `beforeunload` 事件捕获浏览器后退事件:
+通过 `beforeunload` 事件捕获浏览器后退事件, 可以在用户离开页面时显示提示信息:
 
 ```js
 window.addEventListener("beforeunload", function() {
