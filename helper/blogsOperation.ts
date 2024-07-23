@@ -7,11 +7,13 @@ export const getBlogsByYear = (year: string) => {
 };
 
 export const getBlogsByTag = (tag: string) => {
-    return allDocuments.filter((doc) => doc.tags.includes(tag));
+    const blogs = allDocuments.filter((blog) => blog.tags.includes(tag));
+    return sortBlogsByDate(blogs);
 };
 
 export const getBlogsByType = (type: string) => {
-    return allDocuments.filter((doc) => doc.type === type);
+    const blogs = allDocuments.filter((blog) => blog.type === type);
+    return sortBlogsByDate(blogs);
 };
 
 export const getBlogsUrlByType = (type: string, slug: string) => {
