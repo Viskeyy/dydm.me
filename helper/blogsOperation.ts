@@ -1,8 +1,9 @@
-import { allDocuments } from 'contentlayer/generated';
-import { format } from 'date-fns';
+import { allDocuments, DocumentTypes } from 'contentlayer/generated';
+import { compareDesc, format, parseISO } from 'date-fns';
 
 export const getBlogsByYear = (year: string) => {
-    return allDocuments.filter((doc) => format(new Date(doc.date), 'yyyy') === year);
+    const blogs = allDocuments.filter((blog) => format(new Date(blog.date), 'yyyy') === year);
+    return sortBlogsByDate(blogs);
 };
 
 export const getBlogsByTag = (tag: string) => {
@@ -22,4 +23,8 @@ export const getBlogsUrlByType = (type: string, slug: string) => {
         default:
             return `/blog/${slug}`;
     }
+};
+
+const sortBlogsByDate = (blogs: DocumentTypes[]) => {
+    return blogs.sort((a, b) => compareDesc(parseISO(a.date), parseISO(b.date)));
 };
