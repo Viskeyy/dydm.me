@@ -1,6 +1,6 @@
 ---
 title: '理想的 PR 是 50 行长'
-date: '2024-05-18'
+date: 2024-05-18
 tags: ['github']
 type: 'DefaultPost'
 ---
