@@ -2,7 +2,7 @@
 title: 'JavaScript 中的 Promise'
 date: 2024-07-26
 tags: ['javascript']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 [原文地址](https://dev.to/kalyan-jyoti/all-about-javascript-promises-154e)

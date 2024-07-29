@@ -2,7 +2,7 @@
 title: 'React 中的新 hook: useActionState'
 date: 2024-07-13
 tags: ['react']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## `useActionState`

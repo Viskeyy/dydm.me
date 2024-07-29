@@ -2,7 +2,7 @@
 title: '在 CSS 中编写逻辑'
 date: 2024-07-08
 tags: ['css']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 在 CSS 中编写逻辑处理代码

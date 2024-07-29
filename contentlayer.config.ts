@@ -32,8 +32,8 @@ const createSlugs: ComputedFields = {
     },
 };
 
-export const DefaultDocument = defineDocumentType(() => ({
-    name: 'DefaultDocument',
+export const DefaultPost = defineDocumentType(() => ({
+    name: 'DefaultPost',
     filePathPattern: 'data/*.md',
     contentType: 'markdown',
     fields: {
@@ -66,7 +66,7 @@ export const DisarrayDocument = defineDocumentType(() => ({
 
 export default makeSource({
     contentDirPath: 'data',
-    documentTypes: [DefaultDocument, DisarrayDocument],
+    documentTypes: [DefaultPost, DisarrayDocument],
     markdown: { remarkPlugins: [remarkGfm] },
     onSuccess: async (importData) => {
         const { allDocuments } = await importData();

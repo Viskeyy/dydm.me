@@ -2,7 +2,7 @@
 title: '为什么 HTTP2 比 HTTP1 更快'
 date: 2024-07-18
 tags: ['http']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 为什么 HTTP2 比 HTTP1 更快

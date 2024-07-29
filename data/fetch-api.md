@@ -2,7 +2,7 @@
 title: 'Fetch 在底层是如何工作的'
 date: 2024-07-25
 tags: ['javascript']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 > [原文地址](https://javascript.plainenglish.io/how-javascripts-fetch-api-works-under-the-hood-2e4f990b9ce1)

@@ -2,7 +2,7 @@
 title: '接收并处理来自 GitHub 的 Webhook'
 date: 2024-06-27
 tags: ['github-notifier']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 接收并处理来自 GitHub 的 Webhook

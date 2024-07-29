@@ -2,7 +2,7 @@
 title: '通过 Webhook 创建一个 GitHub 通知 Bot'
 date: 2024-06-26
 tags: ['github-notifier']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 通过 Webhook 创建一个 GitHub 通知 Bot

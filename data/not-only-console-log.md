@@ -2,7 +2,7 @@
 title: '不止 console.log'
 date: 2024-06-26
 tags: ['javascript', 'console']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 不止 console.log

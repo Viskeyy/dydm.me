@@ -2,7 +2,7 @@
 title: 'File & Blob'
 date: 2024-07-23
 tags: ['javascript']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 基本概念

@@ -2,7 +2,7 @@
 title: 'Github webhook 中的关键信息'
 date: 2024-07-01
 tags: ['github-notifier']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## GitHub 的 webhook 中有哪些重要的信息?

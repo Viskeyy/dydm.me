@@ -2,7 +2,7 @@
 title: '柯里化函数'
 date: 2024-07-24
 tags: ['javascript']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 > [原文地址](https://designtechworld.medium.com/everything-about-currying-in-javascript-a2614b82e6ca)

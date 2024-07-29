@@ -2,7 +2,7 @@
 title: '理想的 PR 是 50 行长'
 date: '2024-05-18'
 tags: ['github']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 原文地址: [The ideal PR is 50 lines long](https://graphite.dev/blog/the-ideal-pr-is-50-lines-long)

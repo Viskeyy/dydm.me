@@ -2,7 +2,7 @@
 title: '一些 JavaScript 技巧'
 date: 2024-07-15
 tags: ['javascript']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 一些简单的技巧

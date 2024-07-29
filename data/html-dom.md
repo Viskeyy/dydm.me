@@ -2,7 +2,7 @@
 title: 'HTML attributes 和 DOM properties'
 date: 2024-07-02
 tags: ['html']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## HTML attributes 和 DOM properties

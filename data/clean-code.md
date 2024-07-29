@@ -2,7 +2,7 @@
 title: '如何写出整洁的代码'
 date: 2024-06-29
 tags: ['code']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 如何写出整洁的代码

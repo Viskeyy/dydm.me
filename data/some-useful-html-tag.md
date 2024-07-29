@@ -2,7 +2,7 @@
 title: '一些有用的HTML标签'
 date: 2024-06-26
 tags: [ 'html' ]
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 一些有用的HTML标签

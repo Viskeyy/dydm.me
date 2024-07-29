@@ -2,7 +2,7 @@
 title: '版本号的意义'
 date: 2024-07-17
 tags: ['version']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 版本数字都代表什么?

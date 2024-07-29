@@ -2,7 +2,7 @@
 title: 'Art of Pull Request'
 date: 2024-07-22
 tags: ['github']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 [原文链接](https://drmingdrmer.github.io/culture/2019/12/20/pr.html)

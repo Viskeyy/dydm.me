@@ -2,7 +2,7 @@
 title: '调用飞书 API 发送通知'
 date: 2024-07-03
 tags: ['github-notifier']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 创建机器人并发送消息

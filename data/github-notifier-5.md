@@ -2,7 +2,7 @@
 title: '为不同的事件发送不同的消息'
 date: 2024-07-04
 tags: ['github-notifier']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## 根据事件的不同, 发送不同的消息内容
