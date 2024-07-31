@@ -3,7 +3,7 @@ title: 'Markdown Guide'
 date: '2019-10-11'
 tags: [ 'github', 'guide' ]
 summary: 'Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.'
-type: 'DisarrayDocument'
+type: 'DisarrayPost'
 ---
 
 # Introduction
@@ -14,7 +14,7 @@ to parse `.mdx` and `.md` files in a more flexible manner without touching webpa
 GitHub flavored markdown is used. `mdx-prism` provides syntax highlighting capabilities for code blocks. Here's a demo
 of how everything looks.
 
-The following markdown cheatsheet is adapted from: https://guides.github.com/features/mastering-markdown/
+The following markdown cheatsheet is adapted from: <https://guides.github.com/features/mastering-markdown/>
 
 # What is Markdown?
 
@@ -71,8 +71,8 @@ _You **can** combine them_
 
 - Item 1
 - Item 2
-    - Item 2a
-    - Item 2b
+  - Item 2a
+  - Item 2b
 
 ### Ordered
 
@@ -106,7 +106,7 @@ http://github.com - automatic!
 [GitHub](http://github.com)
 ```
 
-http://github.com - automatic!
+<http://github.com> - automatic!
 [GitHub](http://github.com)
 
 ## Blockquotes

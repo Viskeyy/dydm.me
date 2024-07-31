@@ -20,7 +20,7 @@ export const getBlogsUrlByType = (type: string, slug: string) => {
     switch (type) {
         case 'DefaultPost':
             return `/blog/${slug}`;
-        case 'DisarrayDocument':
+        case 'DisarrayPost':
             return `/blog/disarray/${slug}`;
         default:
             return `/blog/${slug}`;

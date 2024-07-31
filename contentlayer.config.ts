@@ -48,8 +48,8 @@ export const DefaultPost = defineDocumentType(() => ({
     },
 }));
 
-export const DisarrayDocument = defineDocumentType(() => ({
-    name: 'DisarrayDocument',
+export const DisarrayPost = defineDocumentType(() => ({
+    name: 'DisarrayPost',
     filePathPattern: 'data/disarray/*.md',
     contentType: 'markdown',
     fields: {
@@ -66,7 +66,7 @@ export const DisarrayDocument = defineDocumentType(() => ({
 
 export default makeSource({
     contentDirPath: 'data',
-    documentTypes: [DefaultPost, DisarrayDocument],
+    documentTypes: [DefaultPost, DisarrayPost],
     markdown: { remarkPlugins: [remarkGfm] },
     onSuccess: async (importData) => {
         const { allDocuments } = await importData();
