@@ -13,7 +13,7 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 
 ## reference
 
-在顶层组件调用 `useReducer`, 通过 reducer 管理组件的状态.
+在组件顶层调用 `useReducer`, 通过 reducer 管理组件的状态.
 
 ```jsx
 import { useReducer } from 'react';
