@@ -1,4 +1,9 @@
-# Hooks
+---
+title: 'React Hooks'
+date: 2024-08-17
+tags: ['react']
+type: 'DefaultPost'
+---
 
 UI : UI = f(data) 函数 f 将数据(data)映射到用户界面
 
