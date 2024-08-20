@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const TagsCard = ({ activatedTag }: { activatedTag?: string }) => {
     const tagCounts = tagData as Record<string, number>;
     const tagKeys = Object.keys(tagCounts);
-    const sortedTags = tagKeys.toSorted((a, b) => tagCounts[b] - tagCounts[a]);
+    const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a]);
 
     return (
         <div className='flex flex-wrap gap-4'>
