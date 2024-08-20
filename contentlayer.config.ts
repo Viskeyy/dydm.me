@@ -22,7 +22,7 @@ const createTags = (allDocuments: any[]) => {
         }
     });
 
-    writeFileSync('./app/tags-data.json', JSON.stringify(tagsCount));
+    writeFileSync('./tags-data.json', JSON.stringify(tagsCount));
 };
 
 const createSlugs: ComputedFields = {

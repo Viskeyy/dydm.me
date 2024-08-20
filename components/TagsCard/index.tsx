@@ -1,5 +1,5 @@
-import tagData from '@/app/tags-data.json';
 import { Button } from '@/components/ui/button';
+import tagData from '@/tags-data.json';
 import Link from 'next/link';
 
 export const TagsCard = ({ activatedTag }: { activatedTag?: string }) => {
