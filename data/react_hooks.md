@@ -5,6 +5,8 @@ tags: ['react']
 type: 'DefaultPost'
 ---
 
+## React Hooks
+
 UI : UI = f(data) 函数 f 将数据(data)映射到用户界面
 
 状态有一个隐含的意思, 就是存在改变状态的行为(behavior)

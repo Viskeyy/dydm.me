@@ -5,7 +5,9 @@ tags: ['javascript']
 type: 'DefaultPost'
 ---
 
-## 基本概念
+## File & Blob
+
+### 基本概念
 
 ```js
 const blob = new Blob(['data'], 'type');
@@ -37,7 +39,7 @@ dataView.setUint8(1, 65)
 * 对于 `DataView` 构造函数来说 , `getUint8(number)` , 表示获取第 `number` 个字节的内容
 `setUint8(number , value)` , 表示设置第 `number` 个字节的内容为 `value`
 
-## 打开文件
+### 打开文件
 
 ```jsx
 const openFile = () => {
@@ -113,7 +115,7 @@ const fetchFile = () =>{
 }
 ```
 
-## 文件操作
+### 文件操作
 
 ```jsx
 const fileOperation = () => {
@@ -164,7 +166,7 @@ const fileOperation = () => {
 }
 ```
 
-## image&canvas
+### image&canvas
 
 ```jsx
 const imageCanvas = () => {
@@ -237,7 +239,7 @@ const imageCanvas = () => {
 }
 ```
 
-## BlobURL&DataURL
+### BlobURL&DataURL
 
 * `URL.createObjectURL(blob)` : blob url , 可以在新标签页中打开
 * `FileReader.readAsDataURL(file)` : data url , 程序用不允许在新标签页中打开 , 但是可以通过手动复制的方式打开
@@ -282,7 +284,7 @@ const URL = () => {
 }
 ```
 
-## 访问文件夹
+### 访问文件夹
 
 * `window.showDirectoryPicker`
 * `dirHandle.values`
@@ -333,6 +335,6 @@ const folder = () =>{
 }
 ```
 
-## 文件上传
+### 文件上传
 
 `formData()` 格式

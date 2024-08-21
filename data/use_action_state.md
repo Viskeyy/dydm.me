@@ -5,7 +5,9 @@ tags: ['react']
 type: 'DefaultPost'
 ---
 
-## `useActionState`
+## React 中的新 hook: useActionState
+
+### `useActionState`
 
 基于表单动作结果更新状态的新的 React hook.
 
@@ -13,7 +15,7 @@ type: 'DefaultPost'
 
 查看[官方文档](https://react.dev/reference/react/useActionState)
 
-## 如何使用
+### 如何使用
 
 ```jsx
 import { useActionState } from 'react';
@@ -26,7 +28,7 @@ const [state, formAction] = useActionState(actionFunction, initialState);
 * `actionFunction` 是一个函数, 当表单提交时触发.
 * `initialState` 是表单状态初始值.
 
-## 什么时候使用 `useActionState`
+### 什么时候使用 `useActionState`
 
 当想要基于表单提交更新状态时, 尤其是使用服务端组件并想要更快的响应时可以使用.
 

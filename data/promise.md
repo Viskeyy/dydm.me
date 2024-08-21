@@ -5,9 +5,11 @@ tags: ['javascript']
 type: 'DefaultPost'
 ---
 
+## JavaScript 中的 Promise
+
 [原文地址](https://dev.to/kalyan-jyoti/all-about-javascript-promises-154e)
 
-## Introduction
+### Introduction
 
 JavaScript 的 Promise 是一个表示异步操作最终完成或失败的对象. 允许将处理函数和异步方法相关联. 异步方法不立即返回值, 而是返回一个在未来某个时间点返回值的承诺.
 
@@ -17,7 +19,7 @@ JavaScript Promise 是一种以更有条理和直观的方式处理异步代码�
 
 理想情况是继续运行其他代码, 在异步操作准备就绪时再处理.
 
-## Promise States
+### Promise States
 
 Promise 提供了一种通过封装异步操作并提供一种在结果就绪时处理结果的方式处理异步函数. Promise 是一个代表还不可用的值的对象, 有三种状态:
 
@@ -25,7 +27,7 @@ Promise 提供了一种通过封装异步操作并提供一种在结果就绪时
 * `Fulfiled`: 操作成功完成, 并且结果可用
 * `Rejected`: 操作失败, 并且错误原因可用
 
-## Creating and using Promise
+### Creating and using Promise
 
 可以通过 Promise 构造函数创建一个 Promise 对象. 该构造函数接受一个函数作为参数, 该函数接受两个参数, 分别是 `resolve` 和 `reject`. 在这个函数中, 可以执行异步操作, 然后在操作成功时调用 `resolve`, 或在操作失败时调用 `reject`.
 
@@ -51,7 +53,7 @@ const promise = new Promise((resolve, reject) => {
 });
 ```
 
-### Handling a fulfilled or Rejected Promise
+#### Handling a fulfilled or Rejected Promise
 
 一旦有了 Promise, 就可以在 Promise 就绪时使用 `then` 方法处理结果. `then` 方法接收一个函数作为参数,  当 promise 是 `fulfiled` 状态时调用这个函数. 这个函数接收一个参数, 该参数是 promise 的结果值.
 
@@ -69,7 +71,7 @@ promise.catch(error => {
 }
 ```
 
-## Chaining Promises
+### Chaining Promises
 
 可以使用 `then` 和 `catch` 方法将 promise 链接在一起, 以特定的顺序执行一系列异步操作.  这些方法用于将进一步的操作和以确定的 promise 相关联. 由于这些方法返回 promise, 因此可以链式调用.
 
@@ -84,7 +86,7 @@ promise.then((value)=> anotherPromise ).then((value)=> anotherPromise ).then((va
 
 > 如果没有 `catch` 方法, 当代码发生错误时, 会作为未处理异常被抛出. 并根据 context, 可能会导致程序崩溃或被更高级的错误处理程序捕获. 在 promise 链中包含 `catch` 方法并正确处理是非常非常重要的.
 
-## Promise.all and Promise.race
+### Promise.all and Promise.race
 
 `Promise.all` 和 `Promise.race` 方法用于同时处理多个 promise 结果.
 

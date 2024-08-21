@@ -5,6 +5,8 @@ tags: ['code', 'react']
 type: 'DefaultPost'
 ---
 
+## React Server Component and Next.js App Router
+
 > [原文地址](https://addyosmani.com/blog/react-server-components-app-router/)
 
 ## 什么是服务端组件

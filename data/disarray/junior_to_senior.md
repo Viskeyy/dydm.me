@@ -5,6 +5,8 @@ tags: ['javascript']
 type: 'DisarrayPost'
 ---
 
+## 从初级到高级
+
 ![junior-to-senior](https://raw.githubusercontent.com/Viskeyy/uPic/master/uPic/0719-fie4Bw.jpg)
 
 1. 协作工具: 开发是一个团队活动, 学会使用 Slack 等协作工具

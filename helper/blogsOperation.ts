@@ -27,6 +27,6 @@ export const getBlogsUrlByType = (type: string, slug: string) => {
     }
 };
 
-const sortBlogsByDate = (blogs: DocumentTypes[]) => {
+export const sortBlogsByDate = (blogs: DocumentTypes[]) => {
     return blogs.sort((a, b) => compareDesc(parseISO(a.date), parseISO(b.date)));
 };

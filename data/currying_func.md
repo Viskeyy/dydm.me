@@ -5,6 +5,8 @@ tags: ['javascript']
 type: 'DefaultPost'
 ---
 
+## 柯里化函数
+
 > [原文地址](https://designtechworld.medium.com/everything-about-currying-in-javascript-a2614b82e6ca)
 
 柯里化是函数式编程中使用的一种技术, 它允许将具有多个参数的函数转换为一系列只有一个参数的函数.

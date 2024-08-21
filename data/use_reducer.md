@@ -5,13 +5,15 @@ tags: ['react']
 type: 'DefaultPost'
 ---
 
+## useReducer
+
 `useReducer` 向 **React 组件**添加一个 reducer.
 
 ```jsx
 const [state, dispatch] = useReducer(reducer, initialArg, init);
 ```
 
-## reference
+### reference
 
 在组件顶层调用 `useReducer`, 通过 reducer 管理组件的状态.
 
@@ -28,25 +30,25 @@ function MyComponent() {
 }
 ```
 
-### 参数
+#### 参数
 
 * reducer: 表示状态如何更新的函数, 必须是纯函数, 接收 state 和 action 作为参数, 返回新的 state. state 和 type 可以是任何类型.
 * initialArg: 初始化 state 的值, 可以是任何类型. 初始值的计算逻辑取决于接下来的 `init` 函数.
 * init: 可选参数, 应返回初始 state 的初始化函数. 未指定则初始 state 为 `initialArg`. 否则将为 `init(initialArg)`.
 
-### 返回值
+#### 返回值
 
 `useReducer` 返回一个包含两个值的数组:
 
 1. 当前 state. 第一次渲染期间, 被设置为 `init(initialArg)` 或 `initialArg`.
 2. `dispatch` 函数, 更新 state 为另一个值并重新渲染.
 
-### 注意事项
+#### 注意事项
 
 * `useReducer` 是一个 hook, 所以只能在组件最顶层或自定义的 hook 中调用, 不能在循环或条件语句中调用. 如果有这种需求, 可以创建一个新的组件, 并将 state 移入其中.
 * 在严格模式下, React 会调用 reducer 和初始化函数两次, 用户检测意外的副作用. 这只是开发模式下的行为, 并不会影响到生产环境.
 
-## `dispatch` 函数
+### `dispatch` 函数
 
 `useReducer` 返回的 `dispatch` 函数更新 state 为另一个不同的值并触发重新渲染. 需要传递 action 作为 `dispatch` 的唯一参数:
 
@@ -61,23 +63,23 @@ function handleClick() {
 
 React 会调用 `reducer` 以更新 state, `reducer` 的参数为当前的 state 与传递的 action.
 
-### 参数
+#### 参数
 
 * action: 用户执行的操作, 可以是任意类型的值. 通常来说 action 是一个对象, 其中 `type` 属性标识类型, 其他属性携带额外信息.
 
-### 返回值
+#### 返回值
 
 `dispatch` 函数没有返回值.
 
-### 注意事项
+#### 注意事项
 
 * `dispatch` 函数是为**下一次渲染而更新 state**. 因此在调用 `dispatch` 函数后读取 state **并不会拿到更新后的值**, 只能获取到调用前的值.
 * 如果提供的新值与当前的 state 相同, React 会**跳过组件和子组件的重新渲染**.
 * React 会**批量更新 state**. state 会在**所有事件函数执行完毕**并且已经调用过它的 `set` 函数后进行更新, 这可以防止在一个事件中多次进行重新渲染. 如果在访问 DOM 等极少数情况下需要强制 React 提前更新, 可以使用 `flushSync`.
 
-## 用法
+### 用法
 
-### 向一个组件添加 reducer
+#### 向一个组件添加 reducer
 
 在组件最顶层调用 `useReducer` 通过 reducer 管理组件状态.
 
@@ -142,7 +144,7 @@ export default function Counter() {
 
 `useReducer` 与 `useState` 非常相似, 但是 `useReducer` 将状态更新逻辑从事件处理函数中移动到组件外部.
 
-## 实现 reducer 函数
+### 实现 reducer 函数
 
 reducer 函数的定义如下:
 
@@ -218,7 +220,7 @@ action 的 type 依赖与组件的实际情况. *即使会导致数据的多次�
 > return [...state, 1];
 > ```
 
-## 避免重新创建初始值
+### 避免重新创建初始值
 
 React 会保存 state 的初始值并在下一次渲染时忽略.
 
@@ -250,9 +252,9 @@ function  TodoList({ username}) {
 
 要注意传递的是函数本身, 而不是结果. 如果初始化函数不需要参数就可以计算出初始值, 那么第二个参数可以为 `null`.
 
-## 疑难解答
+### 疑难解答
 
-### 已经 dispatch 了一个 action, 但是打印出来还是旧 state
+#### 已经 dispatch 了一个 action, 但是打印出来还是旧 state
 
 调用 `dispatch` 函数**不会改变当前渲染的 state**. 这是因为*state 的行为和快照一样*. 更新 state 会使用新的值来对组件重新渲染, 但是不会改变当前执行的事件处理函数里面的 state 值.
 
@@ -267,17 +269,17 @@ console.log(state);
 console.log(nextState);
 ```
 
-### 已经 dispatch 了一个 action, 但是屏幕并没有更新
+#### 已经 dispatch 了一个 action, 但是屏幕并没有更新
 
 React 使用 `Object.is` 比较更新前后的 state, 如果**它们相等就会跳过这次更新**. 这通常是因为直接修改了对象或数组.
 
 由于直接修改并返回了 `state` 对象, 所以 React 会跳过这次更新. 为了修复这个错误, 应该确保总是*使用正确的方式更新对象和数组*.
 
-### dispatch 之后 state 的某些属性变为 undefined
+#### dispatch 之后 state 的某些属性变为 undefined
 
 确保每个 `case` 语句中所返回的新的 state 都**复制了当前的属性**.
 
-### reducer 和初始化函数运行了两次
+#### reducer 和初始化函数运行了两次
 
 *严格模式* 下 React 会调用两次 reducer 和初始化函数, 这不会破坏代码逻辑.
 

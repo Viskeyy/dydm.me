@@ -5,9 +5,7 @@ tags: ['javascript']
 type: 'DefaultPost'
 ---
 
-## 一些简单的技巧
-
-在 JavaScript 中, 可以通过一些原生的简单的代码做到一些有趣的事, 以下是一些例子:
+## 一些 JavaScript 技巧
 
 ### 获取操作系统的详细信息
 

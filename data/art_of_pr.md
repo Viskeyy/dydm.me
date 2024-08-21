@@ -5,6 +5,8 @@ tags: ['github']
 type: 'DefaultPost'
 ---
 
+## Art of Pull Request
+
 [原文链接](https://drmingdrmer.github.io/culture/2019/12/20/pr.html)
 
 > PR writer:

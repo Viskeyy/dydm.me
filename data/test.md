@@ -5,6 +5,6 @@ tags: [ 'test' ]
 type: 'DefaultPost'
 ---
 
-# Test
+## Test
 
 This is a test post.

@@ -5,13 +5,15 @@ tags: ['javascript']
 type: 'DefaultPost'
 ---
 
+## Fetch 在底层是如何工作的
+
 > [原文地址](https://javascript.plainenglish.io/how-javascripts-fetch-api-works-under-the-hood-2e4f990b9ce1)
 
-## Introduction
+### Introduction
 
 Fetch 是提供通过网络异步获取资源的现代 web API. 由于其简单性, 灵活性和一致性, 它已经成为 web 应用中获取数据和资源的受欢迎的选择. 这篇文章将查看 Fetch API 在低层如何工作的, 并探索其核心功能.
 
-## How Fetch API works?
+### How Fetch API works?
 
 Fetch 是基于 Promise 的, 它为处理 JavaScript 中的异步操作提供了一种一致而优雅的方式. 当调用 `fetch()` 函数时, 它返回一个 Promise 对象. 如果请求成功, Promise 对象将与一个 `Response` 对象一起解析, 如果请求失败, Promise 对象将用 `error` 拒绝请求.
 
@@ -48,7 +50,7 @@ fetch('https://abc.com/data.json', {
 
 Fetch API 同样支持其他的各种功能, 包括请求头和响应头, 请求和响应模式, cookies 还有更多.
 
-## Simplified Implementation
+### Simplified Implementation
 
 下面是一个简单的 JavaScript 实现 Fetch API, 解释了它在底层是如何工作的.
 
@@ -97,6 +99,6 @@ Fetch API 的实现使用了 XMLHTTPRequest 对象, 这个对象是一个低级�
 
 Fetch API 的实现只是简单的, 并且没有包含实际上 Fetch API 的所有功能. 但它应该让你了解它在底层是如何工作的.
 
-## Conclusion
+### Conclusion
 
 Fetch API 在 web 应用中提供了一种强力且灵活的通过网络获取资源的方式. 在底层, 它使用 `XMLHTTPRequest` 对象发送 HTTP 请求并接收服务端的返回值. 通过使用 Promise 和一致的 API, Fetch API 使在 JavaScript 处理异步操作变得简单. 由于对 HTTP 方法, 头部以及其他功能的支持, Fetch API 已经成为现代 web 应用中获取资源和数据的热门选择.

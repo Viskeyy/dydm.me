@@ -5,9 +5,11 @@ tags: ['http']
 type: 'DefaultPost'
 ---
 
+## CORS 指南
+
 假设访问一个 A 网站, 如何没有跨域, A 网站可以在拿到信息后请求任意网站, 包括社交, 金融等敏感网站. 所以需要跨域限制.
 
-## Asynchronous JavaScript and XML (AJAX)
+### Asynchronous JavaScript and XML (AJAX)
 
 AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求. AJAX 在客户端执行, 当用户访问网站时, 浏览器将启动 AJAX 请求.
 
@@ -15,7 +17,7 @@ AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求.
 
 ![AJAX request](https://cdn.jsdelivr.net/gh/Viskeyy/uPic@master/uPic/0805-V0eO56.jpg)
 
-## 互联网为什么安全
+### 互联网为什么安全
 
 如何有人创建恶意网站, 是什么保护了用户的隐私和敏感内容?
 
@@ -26,17 +28,17 @@ AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求.
 
 如果网站向不同来源的 url 发送请求, 则该请求被视为**跨域请求**.
 
-## 有凭据和没有凭据
+### 有凭据和没有凭据
 
 "使用凭据" 是可以在 AJAX 中启用的选项. 它告诉浏览器在 AJAX 请求中包含用的的 cookie. 因此网站知道是哪个用户的浏览器执行了请求, 响应对应于该用户的相关信息.
 
 如果没有启用 "使用凭证", AJAX 则不会包含任何 cookie. 网站会将此请求视为匿名用户访问. 这时的响应中不存在个人信息.
 
-## CORS 规则定义
+### CORS 规则定义
 
 当浏览器执行一个从 A 到 B 的 AJAX 请求, 会根据 B 的 CORS 规则来表现. B 的服务器定义了需要浏览器遵守的 CORS 规则. 特定的 HTTP 响应头定义了这些规则. 头部中的最重要的部分是 **Access-Control-Allow-Origin** 和 **Access-Control-Allow-Credentials**.
 
-## 跨域请求处理
+### 跨域请求处理
 
 当一个 A 想 B 执行 AJAX 跨域请求时, 浏览器会检查 B 的 CORS 策略以了解如何处理来自 A 的请求.
 
@@ -45,7 +47,7 @@ AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求.
 1. 浏览器是否应该按照 JavaScript 代码执行 HTTP 请求
 2. 如果浏览器执行请求, 是否应该让 JavaScript 代码访问响应
 
-### 是否请求?
+#### 是否请求?
 
 对于某些 AJAX 配置, 浏览器在请求时不会检查 CORS 策略. 其他情况下则会检查, 浏览器会先对 url 执行 HTTP OPTIONS 请求以检索 CORS 策略, 称为预检请求.
 
@@ -69,13 +71,13 @@ AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求.
 * 非标准 content-type 类型的 POST 请求
 * 自定义 HTTP headers
 
-### 允许或拒绝访问
+#### 允许或拒绝访问
 
 如果浏览器执行 AJAX 请求 , 则必须决定是否允许 JavaScript 访问响应. 浏览器将从响应中检索 CORS 策略, 并查看 AJAX 请求是否符合该策略.
 
 如果是, JavaScript 就可以访问响应. 如果不是则无法访问, 并在控制台中显示一条错误消息
 
-### CORS 策略检查
+#### CORS 策略检查
 
 总的来说, 浏览器在两种情况下检查 CORS 策略:
 
@@ -97,7 +99,7 @@ AJAX 是 JavaScript 中的一种机制, 可以让浏览器在后台发送请求.
 
 ![CORS check](https://cdn.jsdelivr.net/gh/Viskeyy/uPic@master/uPic/0806-vVDzQV.jpg)
 
-## 如果 CORS 策略配置错误会有哪些危险
+### 如果 CORS 策略配置错误会有哪些危险
 
 良好的 CORS 策略可确保恶意网站无法使用用户身份向某个网站发送 HTTP 请求.
 
@@ -108,7 +110,7 @@ CORS 策略是使用 HTTP response headers 定义的, 开发人员需要定义�
 * 恶意网站执行 AJAX 请求检索网站上用户的个人信息, 然后 JavaScript 可以将这些电子邮件发送给恶意网站的所有者
 * 恶意网站执行 AJAX POST 请求, 更改用户的信息
 
-## 如何定义安全的 CORS  策略
+### 如何定义安全的 CORS  策略
 
 CORS 策略由特定的 HTTP response headers 定义, 每个 header 都需要确保其值足够严格以防止任何恶意活动. 还要确保该策略不会影响合法请求:
 

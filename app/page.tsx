@@ -1,9 +1,13 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { sortBlogsByDate } from '@/helper/blogsOperation';
 import { allDocuments } from 'contentlayer/generated';
 import { format } from 'date-fns';
+import Link from 'next/link';
 
 export default function Home() {
     const firstPost = allDocuments[0];
+    const latestFivePosts = sortBlogsByDate(allDocuments).slice(0, 5);
+    const randomFivePosts = allDocuments.sort(() => Math.random() - 0.5).slice(0, 5);
 
     return (
         <main className='min-h-[calc(100vh-6rem)]'>
@@ -39,14 +43,18 @@ export default function Home() {
                         <CardTitle>最新内容</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p>{firstPost.title}</p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
+                        {latestFivePosts.map((post) => {
+                            return (
+                                <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
+                                    {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                </p>
+                            );
+                        })}
                     </CardContent>
                     <CardFooter>
-                        <p>查看更多</p>
+                        <Link href='/blog' className='ml-auto hover:text-zinc-200'>
+                            查看更多
+                        </Link>
                     </CardFooter>
                 </Card>
                 <br />
@@ -56,16 +64,18 @@ export default function Home() {
                         <CardTitle>随便看看</CardTitle>
                     </CardHeader>
                     <CardContent className='divide-y divide-zinc-800'>
-                        <p className='hover:cursor-pointer hover:text-zinc-200'>
-                            {firstPost.title} <span className='float-end'>{format(new Date(firstPost.date), 'yyyy-MM-dd')}</span>
-                        </p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
-                        <p>Card Content</p>
+                        {randomFivePosts.map((post) => {
+                            return (
+                                <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
+                                    {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                </p>
+                            );
+                        })}
                     </CardContent>
                     <CardFooter>
-                        <div className='bg-yellow- ml-auto'>查看更多</div>
+                        <Link href='/tags' className='ml-auto hover:text-zinc-200'>
+                            查看更多
+                        </Link>
                     </CardFooter>
                 </Card>
                 <br />
