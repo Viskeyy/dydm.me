@@ -70,6 +70,6 @@ export default makeSource({
     markdown: { remarkPlugins: [remarkGfm] },
     onSuccess: async (importData) => {
         const { allDocuments } = await importData();
-        // createTags(allDocuments);
+        createTags(allDocuments);
     },
 });
