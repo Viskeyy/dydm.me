@@ -68,8 +68,8 @@ export default makeSource({
     contentDirPath: 'data',
     documentTypes: [DefaultPost, DisarrayPost],
     markdown: { remarkPlugins: [remarkGfm] },
-    onSuccess: async (importData) => {
-        const { allDocuments } = await importData();
-        createTags(allDocuments);
-    },
+    // onSuccess: async (importData) => {
+    //     const { allDocuments } = await importData();
+    //     createTags(allDocuments);
+    // },
 });
