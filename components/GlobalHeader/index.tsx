@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const GlobalHeader = () => {
     const routes = [
         { name: 'Blog', path: '/blog' },
-        { name: 'Tag', path: '/tags' },
+        { name: 'Tags', path: '/tags' },
         { name: 'Disarray', path: '/disarray' },
     ];
 

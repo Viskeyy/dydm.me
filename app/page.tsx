@@ -1,5 +1,5 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { sortBlogsByDate } from '@/helper/blogsOperation';
+import { getBlogsUrlByType, sortBlogsByDate } from '@/helper/blogsOperation';
 import { allDocuments } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import Link from 'next/link';
@@ -46,7 +46,9 @@ export default function Home() {
                         {latestFivePosts.map((post) => {
                             return (
                                 <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
-                                    {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                    <Link href={getBlogsUrlByType(post.type, post.slug)}>
+                                        {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                    </Link>
                                 </p>
                             );
                         })}
@@ -67,7 +69,9 @@ export default function Home() {
                         {randomFivePosts.map((post) => {
                             return (
                                 <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
-                                    {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                    <Link href={getBlogsUrlByType(post.type, post.slug)}>
+                                        {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
+                                    </Link>
                                 </p>
                             );
                         })}
