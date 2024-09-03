@@ -1,11 +1,8 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { getBlogsUrlByType, sortBlogsByDate } from '@/helper/blogsOperation';
+import { HomeCard } from '@/components/HomeCard/page';
+import { sortBlogsByDate } from '@/helper/blogsOperation';
 import { allDocuments } from 'contentlayer/generated';
-import { format } from 'date-fns';
-import Link from 'next/link';
 
 export default function Home() {
-    const firstPost = allDocuments[0];
     const latestFivePosts = sortBlogsByDate(allDocuments).slice(0, 5);
     const randomFivePosts = allDocuments.sort(() => Math.random() - 0.5).slice(0, 5);
 
@@ -38,55 +35,10 @@ export default function Home() {
                 <p> 网站会持续更新, 相信在长期主义的影响下, 会有意想不到的收获.</p>
                 <br />
 
-                <Card className='border-zinc-800 text-zinc-400'>
-                    <CardHeader>
-                        <CardTitle>最新内容</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        {latestFivePosts.map((post) => {
-                            return (
-                                <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
-                                    <Link href={getBlogsUrlByType(post.type, post.slug)}>
-                                        {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
-                                    </Link>
-                                </p>
-                            );
-                        })}
-                    </CardContent>
-                    <CardFooter>
-                        <Link href='/blog' className='ml-auto hover:text-zinc-200'>
-                            查看更多
-                        </Link>
-                    </CardFooter>
-                </Card>
+                <HomeCard title='最新内容' posts={latestFivePosts} href={'/blog'} />
                 <br />
 
-                <Card className='border-zinc-800 text-zinc-400'>
-                    <CardHeader>
-                        <CardTitle>随便看看</CardTitle>
-                    </CardHeader>
-                    <CardContent className='divide-y divide-zinc-800'>
-                        {randomFivePosts.map((post) => {
-                            return (
-                                <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
-                                    <Link href={getBlogsUrlByType(post.type, post.slug)}>
-                                        {post.title} <span className='float-end'>{format(new Date(post.date), 'yyyy-MM-dd')}</span>
-                                    </Link>
-                                </p>
-                            );
-                        })}
-                    </CardContent>
-                    <CardFooter>
-                        <Link href='/tags' className='ml-auto hover:text-zinc-200'>
-                            查看更多
-                        </Link>
-                    </CardFooter>
-                </Card>
-                <br />
-
-                {/*<p className='text-sm text-zinc-800'>*/}
-                {/*    一个普通的程序员, 会写一些自己感兴趣的内容. 喜欢简洁美观易用的产品, 在这个博客网站中以文字记录的方式沉淀技术 / 生活 / 思考方式,*/}
-                {/*</p>*/}
+                <HomeCard title='随便看看' posts={randomFivePosts} href={'/tags'} />
             </div>
         </main>
     );

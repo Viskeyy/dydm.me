@@ -3,7 +3,7 @@ import { TagsCard } from '@/components/TagsCard';
 import { getBlogsByTag } from '@/helper/blogsOperation';
 import { PostList } from 'components/PostList';
 
-export default function Tag({ params }: { params: { tag: string } }) {
+export default function Tag({ params }: Readonly<{ params: { tag: string } }>) {
     const posts = getBlogsByTag(params.tag);
 
     return (
