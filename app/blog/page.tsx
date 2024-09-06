@@ -3,29 +3,16 @@ import { PageTitle } from 'components/PageTitle';
 import { PostCards } from 'components/PostCard';
 
 export default function Blog() {
-    const posts21 = getBlogsByYear('2021');
-    const posts22 = getBlogsByYear('2022');
-    const posts23 = getBlogsByYear('2023');
-    const posts24 = getBlogsByYear('2024');
+    const years = ['2024', '2023', '2022', '2021'];
 
     return (
-        <main className='min-h-[calc(100vh-6rem)]'>
-            <div>
-                <PageTitle title='2024' />
-                <PostCards posts={posts24} />
-            </div>
-            <div>
-                <PageTitle title='2023' />
-                <PostCards posts={posts23} />
-            </div>
-            <div>
-                <PageTitle title='2022' />
-                <PostCards posts={posts22} />
-            </div>
-            <div>
-                <PageTitle title='2021' />
-                <PostCards posts={posts21} />
-            </div>
+        <main className='min-h-[calc(100vh-10rem)]'>
+            {years.map((year) => (
+                <div key={year}>
+                    <PageTitle title={year} />
+                    <PostCards posts={getBlogsByYear(year)} />
+                </div>
+            ))}
         </main>
     );
 }

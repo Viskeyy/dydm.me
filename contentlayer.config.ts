@@ -64,9 +64,25 @@ export const DisarrayPost = defineDocumentType(() => ({
     },
 }));
 
+export const FrontEndPost = defineDocumentType(() => ({
+    name: 'DisarrayPost',
+    filePathPattern: 'data/front_end/*.md',
+    contentType: 'markdown',
+    fields: {
+        date: { type: 'date', required: true },
+        summary: { type: 'string', required: false },
+        tags: { type: 'list', of: { type: 'string' }, required: true, default: [] },
+        title: { type: 'string', required: true },
+    },
+    computedFields: {
+        ...createSlugs,
+        url: { type: 'string', resolve: (post) => `/blog/${post._raw.flattenedPath}` },
+    },
+}));
+
 export default makeSource({
     contentDirPath: 'data',
-    documentTypes: [DefaultPost, DisarrayPost],
+    documentTypes: [DefaultPost, DisarrayPost, FrontEndPost],
     markdown: { remarkPlugins: [remarkGfm] },
     // onSuccess: async (importData) => {
     //     const { allDocuments } = await importData();

@@ -7,7 +7,7 @@ export default function Tag({ params }: Readonly<{ params: { tag: string } }>) {
     const posts = getBlogsByTag(params.tag);
 
     return (
-        <main className='min-h-[calc(100vh-6rem)]'>
+        <main className='min-h-[calc(100vh-10rem)]'>
             <PageTitle title={params.tag.toUpperCase()} />
             <div className='grid grid-cols-3 gap-4'>
                 <div className='col-span-1'>

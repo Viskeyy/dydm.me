@@ -6,7 +6,7 @@ export default function Disarray() {
     const disarray = getBlogsByType('DisarrayPost');
 
     return (
-        <main className='min-h-[calc(100vh-6rem)]'>
+        <main className='min-h-[calc(100vh-10rem)]'>
             <PageTitle title={'Disarray'} />
 
             <PostList posts={disarray} />

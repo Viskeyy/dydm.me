@@ -7,7 +7,7 @@ export default function Home() {
     const randomFivePosts = allDocuments.sort(() => Math.random() - 0.5).slice(0, 5);
 
     return (
-        <main className='min-h-[calc(100vh-6rem)]'>
+        <main className='min-h-[calc(100vh-10rem)]'>
             <div className='mx-auto max-w-5xl font-mono leading-8 text-zinc-400'>
                 <h1 className='text-4xl text-zinc-200'>DYDM.ME</h1>
                 <br />

@@ -10,7 +10,7 @@ export const HomeCard = ({ title, posts, href }: { title: string; posts: Documen
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className='divide-y divide-zinc-800'>
                 {posts.map((post) => (
                     <p className='hover:cursor-pointer hover:text-zinc-200' key={post._id}>
                         <Link href={getBlogsUrlByType(post.type, post.slug)}>
