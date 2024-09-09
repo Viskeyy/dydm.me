@@ -6,10 +6,8 @@ export default function Page({ params }: Readonly<{ params: { slug: string[] } }
     const currentDocument = allDocuments.find((doc) => doc.slug === params.slug[params.slug.length - 1]);
 
     if (!currentDocument) {
-        return <div>Document not found</div>;
+        return <main className='mx-auto min-h-[calc(100vh-10rem)] w-[60vw] text-center'> Document not found </main>;
     }
-
-    console.log(currentDocument.body.html);
 
     return (
         <main className='mx-auto min-h-[calc(100vh-10rem)] w-[60vw]'>
