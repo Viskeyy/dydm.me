@@ -1,8 +1,8 @@
 ---
 title: '理解 API'
-date: '2024-09-25'
+date: 2024-09-25
 tags: ['api']
-type: 'DefaultDocument'
+type: 'DefaultPost'
 ---
 
 ## API 的概念和例子
