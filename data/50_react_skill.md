@@ -574,3 +574,249 @@ type: 'DefaultPost'
 
     // Usage
     <MyComponent name="John" age={30} />
+    ```
+
+36. 使用 useEffect 处理副作用
+
+    ```jsx
+    const DataFetcher = ({ url }) => {
+        const [data, setData] = useState(null);
+        const [loading, setLoading] = useState(true);
+
+        useEffect(() => {
+            const fetchData = async () => {
+                const response = await fetch(url);
+                const result = await response.json();
+                setData(result);
+                setLoading(false);
+            };
+            fetchData();
+        }, [url]);
+
+        return loading ? <div>Loading...<div> : <div>data.title</div>;
+    };
+
+    // Usage
+    <DataFetcher url="https://jsonplaceholder.typicode.com/todos/1" />
+    ```
+
+37. 使用自定义 Hooks 处理 Context
+
+    ```jsx
+    const ThemeContext = React.createContext('light');
+
+    const useTheme = () => {
+        const context = useContext(ThemeContext);
+        if (!context) {
+            throw new Error('useTheme must be used within a ThemeProvider');
+        }
+        return context;
+    };
+
+    const ThemeComponent = () => {
+        const theme = useTheme();
+        return <div className={`theme-${theme}`}>Themed Component</div>
+    };
+
+    // Usage
+    const App = () => (
+        <ThemeContext.Provider value="dark">
+            <ThemeComponent />
+        </ThemeContext.Provider>
+    )
+    ```
+
+38. 使用 React.memo 减少 re-render
+
+    ```jsx
+    const MyComponent = React.memo(({ value }) => {
+        console.log('Render MyComponent');
+        return <div>{value}</div>
+    })
+
+    // Usage
+    const App = () => {
+        const [count, setCount] = useState(0);
+
+        return (
+            <div>
+                <button onClick={() => setCount(count + 1)}>Increment</button>
+                <MyComponent value='Hello' />
+            </div>
+        );
+    };
+    ```
+
+39. 异步函数错误处理
+
+    ```jsx
+    const DataFetcher = ({ url }) => {
+        const [data, setData] = useState(null);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+
+        useEffect(() => {
+            const fetchData = async () => {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const result = await response.json();
+                    setData(result);
+                } catch (error) {
+                    setError(error);
+                } finally {
+                    setLoading(false);
+                };
+            };
+            fetchData();
+        }, [url]);
+
+        if (loading) return <div>Loading...</div>;
+        if (error) return <div>Error: {error.message}</div>;
+        return <div>{data.title}</div>;
+    };
+
+    // Usage
+    <DataFetcher url="https://jsonplaceholder.typicode.com/todos/1" />
+    ```
+
+40. Next.js 服务端渲染
+
+    ```jsx
+    const Home = ({ data }) => {
+        return (
+            <div>
+                <h1>Server-side Rendered Data</h1>
+                <p>{data.title}</p>
+            </div>
+        );
+    };
+
+    export async function getServerSideProps() {
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const data = await res.json();
+        return { props: { data } };
+    }
+
+    // Usage
+    export default Home;
+    ```
+
+41. Next.js 静态页面
+
+    ```jsx
+    const Home = ({ data }) => {
+        return (
+            <div>
+                <h1>Static Page</h1>
+                <p>{data.title}</p>
+            </div>
+        )
+    }
+
+    export async function getStaticProps() {
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const data = await res.json();
+        return { props: { data } };
+    }
+
+    // Usage
+    export default Home;
+    ```
+
+42. 客户端路由
+
+    ```jsx
+    import { BrowserRouter as Router, Route, Route, Switch, Link } from 'react-router-dom';
+
+    const Home = () => <h1>Home</h1>;
+    const About = () => <h1>About</h1>;
+
+    const App = () => (
+        <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
+
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+            </Switch>
+        </Router>
+    )
+
+    // Usage
+    <App />
+    ```
+
+43. 使用 React 测试库进行测试
+
+44. 使用 React DevTools 进行调试
+
+45. 使用 useMemo 记忆昂贵的计算
+
+    ```jsx
+    const ExpensiveComponent = ({ value }) => {
+        const expensiveCalculation = (num) => {
+            console.log('Calculating...');
+            return num * 2;
+        };
+
+        const memoizedCalculation = useMemo(() => expensiveCalculation(value), [value]);
+        return <div>{memoizedCalculation}</div>;
+    };
+
+    // Usage
+    <ExpensiveComponent value={10} />
+    ```
+
+46. 使用 useCallback 缓存函数
+
+    ```jsx
+    const Button = React.memo(({ onClick, children }) => {
+        return <button onClick={onClick}>{children}</button>
+    })
+
+    const App = () => {
+        const [count, setCount] = useState(0);
+        const handleClick = useCallback(() => {
+            setCount((prevCount) => prevCount + 1);
+        }, [count]);
+
+        return (
+            <div>
+                <Button onClick={handleClick}>Click me</Button>
+                <p>{count}</p>
+            </div>
+        )
+    }
+
+    // Usage
+    <App />
+    ```
+
+47. 环境变量
+
+48. 使用 react-i18next 进行国际化
+
+49. 使用 React.lazy 拆分代码
+
+    ```jsx
+    import React, { lazy, Suspense } from 'react';
+
+    const LazyComponent = lazy(() => import('./LazyComponent'));
+
+    const App = () => (
+        <Suspense fallback={<div>Loading...</div>}>
+            <LazyComponent />
+        </Suspense>
+    );
+
+    // Usage
+    <App />
+    ```
+
+50. 使用 webpack 删除无用的代码
