@@ -9,7 +9,7 @@ type: 'DefaultPost'
 
 * `brew autoremove`: 删除仅作为依赖项的并且不再使用的 formula
 * `brew cleanup`: 清理缓存
-* `brew deps --tree installed`: 以树状图的形式查看所有已安装的 formula 的依赖项
+* `brew deps --tree <formula_name>`: 以树状图的形式查看所有已安装的 formula 的依赖项
 * `brew deps <formula_name>`: 查看某个 formula 的依赖项
 * `brew uninstall --cask --zap <cask_name>`: 彻底删除某个 cask
 * `brew untap <tap_name>`: 删除某个 tap
